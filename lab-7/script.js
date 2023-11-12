@@ -27,6 +27,8 @@ function createOrderedListsForBeans(counters) {
         const filteredCounters = filterCountersByBeanType(counters, beanType);
         const totalBeansCount = getTotalBeansCount(filteredCounters);
 
+        filteredCounters.sort((a, b) => a.name.localeCompare(b.name));
+        
         const beanList = document.createElement('ol');
         beanList.innerHTML = `<h2>${beanType} (${totalBeansCount})`;
 
